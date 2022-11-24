@@ -1,0 +1,40 @@
+<html>
+<!-- <meta http-equiv="refresh" content="5">  -->
+<!--
+		width:1280px;
+		height:1400px;
+-->
+<head>
+	<!-- <meta charset="utf-8"> -->
+	<!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
+	<title>WE Feed</title>
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<style>
+	div{
+		width:auto;
+		height:auto;
+		position:relative;
+		overflow:hidden;
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+	</style>
+</head>
+	<h1>Willows Estate Feed</h1>
+	<!-- <img src="http://192.168.1.200/capture.jpg"></img> -->
+
+	<body>
+	<div>
+		<img id="capture" src="http://192.168.1.200/capture.jpg">
+	</div>
+	<script>
+	window.setInterval("reloadiframe();", 5000);
+	function reloadiframe() {
+		document.getElementById("capture").src="http://192.168.1.200/capture.jpg?" + new Date().getTime();
+		//document.getElementById('capture').src = document.getElementById('capture').src
+		console.log('reloading');
+	}	
+	</script>
+	</body>
+</html>
