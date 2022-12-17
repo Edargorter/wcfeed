@@ -22,17 +22,18 @@
 	</style>
 </head>
 	<h1>Willows Estate Feed</h1>
-	<!-- <img src="http://192.168.1.200/capture.jpg"></img> -->
 
 	<body>
 	<div>
-		<img id="capture" src="http://192.168.1.200/capture.jpg">
+		<img id="capture" src="/capture.jpg">
+		<p>CPU Temp: <p><p id="temp" src="/temp.txt"></p>
 	</div>
 	<script>
 	window.setInterval("reloadiframe();", 5000);
 	function reloadiframe() {
-		document.getElementById("capture").src="http://192.168.1.200/capture.jpg?" + new Date().getTime();
-		//document.getElementById('capture').src = document.getElementById('capture').src
+		var d = new Date().getTime();
+		document.getElementById("capture").src="/capture.jpg?" + d;
+		document.getElementById("temp").src="/temp.txt?" + d;
 		console.log('reloading');
 	}	
 	</script>
