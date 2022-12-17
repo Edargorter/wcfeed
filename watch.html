@@ -26,14 +26,14 @@
 	<body>
 	<div>
 		<img id="capture" src="/capture.jpg">
-		<p>CPU Temp: <p><p id="temp" src="/temp.txt"></p>
+		<p>CPU Temp: <p><iframe style="border: none;" id="temp" src="/temp.txt"></iframe>
 	</div>
 	<script>
 	window.setInterval("reloadiframe();", 5000);
 	function reloadiframe() {
 		var d = new Date().getTime();
-		document.getElementById("capture").src="/capture.jpg?" + d;
 		document.getElementById("temp").src="/temp.txt?" + d;
+		document.getElementById("capture").src="/capture.jpg?" + d;
 		console.log('reloading');
 	}	
 	</script>
